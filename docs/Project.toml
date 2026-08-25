@@ -1,0 +1,9 @@
+[compat]
+Documenter = "1"
+Glob = "1"
+julia = "1.10"
+
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+GEM = "b8b2a47b-24dc-44c6-a18d-1d09802f14f0"
+Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
