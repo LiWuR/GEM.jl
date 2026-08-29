@@ -153,7 +153,6 @@ result = solve_equilibrium_model_mcp_jump(
     residual_tol = 1.0e-8,
     silent = true,
 )
-好
 
 # ----------------------------------------------------------------
 # 5. Results

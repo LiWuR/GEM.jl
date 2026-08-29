@@ -4,36 +4,36 @@ CurrentModule = GEM
 
 # GEM.jl
 
-GEM is a Julia package for formulating and solving general equilibrium models
-as mixed complementarity problems. It represents consumers, producers, and
-other economic agents through a unified net-supply framework, and combines
-agent optimality conditions, market-clearing conditions, and auxiliary
-equilibrium equations in a single system.
+> **Final standalone release.** GEM.jl has been integrated into
+> `GeneralEquilibriumModeling.jl`. Active development now takes place there,
+> where this low-level framework is available as the
+> `GeneralEquilibriumModeling.GEM` submodule.
 
-GEM is the core equilibrium-modeling and solution package. It exposes the
-low-level net-supply, complementarity-condition, model-construction, and solver
-interfaces used by the broader GEM ecosystem. For most routine modeling tasks,
-users are encouraged to work through the higher-level wrapper package `GEMB`,
-which provides more convenient model-building interfaces while using GEM as the
-underlying equilibrium engine. Direct use of GEM is mainly useful when users
-need fine-grained control over agent net supplies, complementarity conditions,
-variable bounds, or custom equilibrium structures.
+GEM formulates and solves general equilibrium models as mixed complementarity
+problems. Consumers, producers, and other economic agents are represented
+through a unified net-supply framework, while agent optimality conditions,
+market-clearing conditions, and auxiliary equilibrium equations are assembled
+into a single equilibrium system.
 
-GEM supports marginal-utility consumers, automatic zero-profit conditions,
-stationary-production conditions, cost-minimization KKT conditions, multiple
-production activities, joint production, cross-agent observable variables,
-and endogenous auxiliary variables. Commodity prices may have nonnegative,
-nonpositive, free, or user-defined bounds, allowing the framework to represent
-ordinary goods, pollution, taxes, subsidies, claims, and other policy
-instruments. The resulting complementarity problem is constructed with JuMP
-and solved using PATH.
+GEM exposes low-level net-supply, complementarity-condition,
+model-construction, and solver interfaces. Direct use of GEM is useful when
+fine-grained control is needed over agent net supplies, complementarity
+conditions, variable bounds, or custom equilibrium structures.
+
+GEM supports marginal-utility consumers, automatic revenue-expenditure-balance
+conditions, production-stationarity conditions, cost-minimization KKT
+conditions, multiple production activities, joint production, cross-agent
+observable variables, and endogenous auxiliary variables. Commodity prices may
+have nonnegative, nonpositive, free, or user-defined bounds. The resulting
+complementarity problem is constructed with JuMP and solved using PATH.
 
 ## Main features
 
-- Unified net-supply representation for all economic agents
-- Consumers specified through marginal-utility functions
-- Producers with automatic zero-profit, stationary-production, or
-  cost-minimization KKT conditions
+- Unified net-supply representation for economic agents
+- Unit and total revenue-expenditure-balance condition rules
+- Marginal-utility consumer conditions
+- Production-stationarity conditions
+- Cost-minimization KKT conditions
 - Multiple activity levels and joint-production technologies
 - Cross-agent observable equilibrium variables
 - Endogenous auxiliary variables and auxiliary equations
@@ -43,24 +43,21 @@ and solved using PATH.
 
 ## Basic workflow
 
-A GEM model is constructed and solved in four steps:
-
 1. Define consumers, producers, and other net-supply agents.
-2. Assemble the agents, commodities, numeraire, and optional auxiliary
+2. Assemble agents, commodities, the numeraire, and optional auxiliary
    equations into an equilibrium model.
-3. Solve the resulting mixed complementarity problem.
-4. Inspect equilibrium prices, agent variables, net supplies, market
-   residuals, and solver diagnostics.
+3. Solve the mixed complementarity problem.
+4. Inspect equilibrium prices, agent variables, net supplies, residuals, and
+   solver diagnostics.
 
-## API Reference
-
-Detailed documentation for GEM's types and functions is provided in the API
-reference pages. The following interfaces are useful starting points:
+## Key API entry points
 
 - [`NetSupplyEquilibriumModel`](@ref)
 - [`NetSupplyAgent`](@ref)
+- [`UnitRevenueExpenditureBalanceConditions`](@ref)
+- [`TotalRevenueExpenditureBalanceConditions`](@ref)
 - [`MarginalUtilityConsumerConditions`](@ref)
-- [`StationaryProductionConditions`](@ref)
+- [`ProductionStationarityConditions`](@ref)
 - [`CostMinimizationKKTConditions`](@ref)
 - [`ProductionNetSupply`](@ref)
 - [`EquilibriumResult`](@ref)

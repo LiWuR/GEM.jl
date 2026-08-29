@@ -1,8 +1,7 @@
 authors = ["LiWuR <liwu.shu@qq.com> and contributors"]
 name = "GEM"
 uuid = "b8b2a47b-24dc-44c6-a18d-1d09802f14f0"
-version = "0.1.0"
-
+version = "0.2.0"
 [compat]
 ForwardDiff = "0.10, 1"
 JuMP = "1"

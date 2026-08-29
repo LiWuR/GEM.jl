@@ -1,78 +1,84 @@
 # GEM.jl
 
+> [!IMPORTANT]
+> **GEM.jl has been integrated into [GeneralEquilibriumModeling.jl](https://github.com/LiWuR/GeneralEquilibriumModeling.jl).**
+>
+> Version **0.2.0** is the final standalone synchronization release of GEM.jl.
+> Active development now takes place in `GeneralEquilibriumModeling.jl`, where
+> the low-level framework is available as the `GeneralEquilibriumModeling.GEM`
+> submodule. This repository is retained for historical reference and is not
+> intended for further feature development.
+
 [![CI](https://github.com/LiWuR/GEM.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/LiWuR/GEM.jl/actions/workflows/CI.yml)
 [![Documentation](https://img.shields.io/badge/docs-dev-blue.svg)](https://LiWuR.github.io/GEM.jl/dev/)
 
-**GEM** stands for **General Equilibrium Modeling**. It is a Julia package for representing and solving general-equilibrium models, with an emphasis on structural equilibrium systems expressed through net-supply, equilibrium, and complementarity conditions.
+## Migration
 
-GEM is the low-level equilibrium engine in the GEM/GEMB package family. **GEMB** provides higher-level economic model builders, while GEM provides the underlying equilibrium representation, variables, condition rules, JuMP construction, and solver interface.
-
-## Installation
-
-Before registration in the Julia General registry, install the development version from GitHub:
+New projects should install and load `GeneralEquilibriumModeling.jl` rather than
+the standalone GEM package.
 
 ```julia
 import Pkg
-Pkg.add(url = "https://github.com/LiWuR/GEM.jl")
+Pkg.add(url = "https://github.com/LiWuR/GeneralEquilibriumModeling.jl")
 ```
 
-After GEM is registered in General, installation will be:
+Then load the low-level GEM framework with
 
 ```julia
-import Pkg
-Pkg.add("GEM")
+using GeneralEquilibriumModeling
+using GeneralEquilibriumModeling.GEM
 ```
 
-## Quick start
-
-Load GEM with:
+Code written against the final standalone GEM release used
 
 ```julia
 using GEM
 ```
 
-The package documentation describes the equilibrium model types, variable references, condition rules, auxiliary equations, and solver interface.
+The standalone repository is retained to preserve the package history and the
+final pre-integration state.
+
+## Overview
+
+GEM is the low-level general-equilibrium framework for representing and solving
+equilibrium systems through net-supply agents and mixed complementarity
+conditions. It provides the equilibrium representation, equilibrium-variable
+references, agent condition rules, auxiliary variables and equations, JuMP
+construction, PATH solver interface, and structured equilibrium results.
+
+The current implementation is maintained as the `GEM` submodule of
+`GeneralEquilibriumModeling.jl`. The higher-level `GEMB` submodule provides
+economic specifications and model-building interfaces on top of GEM.
 
 ## PATH solver and licensing
 
-GEM uses [PATHSolver.jl](https://github.com/chkwon/PATHSolver.jl) to solve mixed complementarity problems. PATHSolver.jl is an open-source Julia wrapper, while the underlying PATH solver is closed source and has separate licensing terms.
+GEM uses PATHSolver.jl to solve mixed complementarity problems. PATHSolver.jl is
+an open-source Julia wrapper, while the underlying PATH solver is separate
+software with its own licensing terms.
 
-Without a PATH license, PATH can solve problems with at most **300 variables** and **2000 Jacobian nonzeros**. Larger models require a valid PATH license.
+Without a PATH license, PATH can solve problems with at most **300 variables**
+and **2000 Jacobian nonzeros**. Larger models require a valid PATH license.
 
-GEM does **not** include or distribute a PATH license. A license can be configured by setting the environment variable before loading GEM/PATHSolver:
-
-```julia
-ENV["PATH_LICENSE_STRING"] = "<license string>"
-using GEM
-```
-
-or directly through PATHSolver after importing it:
-
-```julia
-import PATHSolver
-PATHSolver.c_api_License_SetString("<license string>")
-```
-
-If PATH reports that a suitable license is unavailable, GEM raises `PATHSolverLicenseError` with a user-facing explanation of the likely license/size issue.
+GEM does not include or distribute a PATH license. A license can be configured
+through the `PATH_LICENSE_STRING` environment variable or directly through
+PATHSolver.
 
 ## Documentation
 
-Development documentation is hosted at:
+The historical standalone documentation is hosted at:
 
 https://LiWuR.github.io/GEM.jl/dev/
 
-Tagged releases are deployed by Documenter.jl and provide versioned and `stable` documentation.
+Current development and documentation belong to:
 
-## Related package
-
-**GEMB.jl (General Equilibrium Model Builder)** is the higher-level modeling layer built on top of GEM. GEM is intended to remain the general equilibrium core; GEMB provides convenient economic specifications and model-building interfaces.
+https://github.com/LiWuR/GeneralEquilibriumModeling.jl
 
 ## License
 
 GEM.jl is released under the MIT License. See [`LICENSE`](LICENSE).
 
-The PATHSolver.jl wrapper is also MIT-licensed. The underlying PATH solver is separate software with its own license terms; see the PATHSolver.jl documentation for details.
-
 ## Development note
 
-Parts of the implementation and documentation have been developed with assistance from generative-AI tools. The maintainer reviews, tests, and takes responsibility for the code and documentation included in the package.
+Parts of the implementation and documentation have been developed with
+assistance from generative-AI tools. The maintainer reviews, tests, and takes
+responsibility for the code and documentation included in the package.
