@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>gemvonNeumannmultiActivitync2na1 · GEM.jl Documentation</title><meta name="title" content="gemvonNeumannmultiActivitync2na1 · GEM.jl Documentation"/><meta property="og:title" content="gemvonNeumannmultiActivitync2na1 · GEM.jl Documentation"/><meta property="twitter:title" content="gemvonNeumannmultiActivitync2na1 · GEM.jl Documentation"/><meta name="description" content="Documentation for GEM.jl Documentation."/><meta property="og:description" content="Documentation for GEM.jl Documentation."/><meta property="twitter:description" content="Documentation for GEM.jl Documentation."/><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">GEM.jl Documentation</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">API Reference</span><ul><li><a class="tocitem" href="../../api/GEM/">GEM</a></li><li><a class="tocitem" href="../../api/GEM_AuxiliaryEquationJumpV1/">GEM.AuxiliaryEquationJumpV1</a></li><li><a class="tocitem" href="../../api/GEM_AuxiliaryEquationsV4/">GEM.AuxiliaryEquationsV4</a></li><li><a class="tocitem" href="../../api/GEM_AuxiliaryVariablesV1/">GEM.AuxiliaryVariablesV1</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumAgentCoreV1/">GEM.EquilibriumAgentCoreV1</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumJumpModelV2/">GEM.EquilibriumJumpModelV2</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumMarginalUtilityModelV5/">GEM.EquilibriumMarginalUtilityModelV5</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumModelSolverV10V19/">GEM.EquilibriumModelSolverV10V19</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumNetSupplyModelV11/">GEM.EquilibriumNetSupplyModelV11</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumResultV1/">GEM.EquilibriumResultV1</a></li><li><a class="tocitem" href="../../api/GEM_EquilibriumVariableRefsV3/">GEM.EquilibriumVariableRefsV3</a></li><li><a class="tocitem" href="../../api/GEM_ProducerConditionsV1/">GEM.ProducerConditionsV1</a></li><li><a class="tocitem" href="../../api/GEM_ProductionNetSupplyV1/">GEM.ProductionNetSupplyV1</a></li></ul></li><li><span class="tocitem">Examples</span><ul><li><a class="tocitem" href="../gem_CD_adValoremClaim_consumerNoVariables_nc3_na2/">gem<em>CD</em>adValoremClaim<em>consumerNoVariables</em>nc3_na2</a></li><li><a class="tocitem" href="../gem_CD_consumerNoVariables_nc2_na2/">gem<em>CD</em>consumerNoVariables<em>nc2</em>na2</a></li><li><a class="tocitem" href="../gem_CD_costMinKKT_nc2_na2/">gem<em>CD</em>costMinKKT<em>nc2</em>na2</a></li><li><a class="tocitem" href="../gem_CD_explicitConditions_nc2_na2/">gem<em>CD</em>explicitConditions<em>nc2</em>na2</a></li><li><a class="tocitem" href="../gem_CD_externality_observedVariable_consumerNoVariables_nc2_na2/">gem<em>CD</em>externality<em>observedVariable</em>consumerNoVariables<em>nc2</em>na2</a></li><li><a class="tocitem" href="../gem_CD_marginalUtility_nc2_na2/">gem<em>CD</em>marginalUtility<em>nc2</em>na2</a></li><li><a class="tocitem" href="../gem_CD_specificSubsidyClaim_consumerNoVariables_nc3_na2/">gem<em>CD</em>specificSubsidyClaim<em>consumerNoVariables</em>nc3_na2</a></li><li><a class="tocitem" href="../gem_pollution_negativePrice_nc3_na2/">gem<em>pollution</em>negativePrice<em>nc3</em>na2</a></li><li class="is-active"><a class="tocitem" href>gem<em>vonNeumann</em>multiActivity<em>nc2</em>na1</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Examples</a></li><li class="is-active"><a href>gem<em>vonNeumann</em>multiActivity<em>nc2</em>na1</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>gem<em>vonNeumann</em>multiActivity<em>nc2</em>na1</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/LiWuR/GEM.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/LiWuR/GEM.jl/blob/main/docs/src/examples/gem_vonNeumann_multiActivity_nc2_na1.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="gem*vonNeumann*multiActivity*nc2*na1"><a class="docs-heading-anchor" href="#gem*vonNeumann*multiActivity*nc2*na1">gem<em>vonNeumann</em>multiActivity<em>nc2</em>na1</a><a id="gem*vonNeumann*multiActivity*nc2*na1-1"></a><a class="docs-heading-anchor-permalink" href="#gem*vonNeumann*multiActivity*nc2*na1" title="Permalink"></a></h1><p>Source file: <code>examples/gem_vonNeumann_multiActivity_nc2_na1.jl</code></p><pre><code class="language-julia hljs"># ================================================================
+# Von Neumann equilibrium with one firm and multiple activities
+#
+# 2 commodities, 1 firm, 2 production activities.
+# The firm has two complementary activity variables z1 and z2.
+#
+# Analytic equilibrium:
+#   rho = 1.2
+#   p   = [1.0, 1.0]
+#   z   = [0.5, 0.5]
+#
+# Normalizations:
+#   p[2] = 1
+#   z1 + z2 = 1
+# ================================================================
+
+using GEM
+
+# ----------------------------------------------------------------
+# 1. Technology matrices
+#
+# Columns correspond to production activities.
+# A[:, j]: unit input vector of activity j
+# B[:, j]: unit joint-output vector of activity j
+# ----------------------------------------------------------------
+
+A = [
+    1.40  0.40
+    0.28  1.64
+]
+
+B = [
+    1.00  0.50
+    0.40  1.20
+]
+
+# ----------------------------------------------------------------
+# 2. Endogenous von Neumann expansion factor
+# ----------------------------------------------------------------
+
+rho = GEM.AuxiliaryVariable(
+    :rho;
+    start = 1.1,
+    lower_bound = 0.0,
+    upper_bound = Inf,
+)
+
+# ----------------------------------------------------------------
+# 3. One firm with two activity levels
+#
+# z = [z1, z2]
+#
+# Aggregate net supply of the firm:
+#
+#     s_f = (rho * B - A) * z
+#
+# Each column of (rho * B - A) is the unit net-supply vector of
+# the corresponding activity.
+#
+# Because and no explicit condition_rule
+# is supplied, GEM constructs one automatic profit condition for each
+# activity variable.
+# ----------------------------------------------------------------
+
+firm = GEM.ProducerAgent(
+    [1, 2],
+    function (variables, prices, observed_values)
+        z = variables
+        rho_value = observed_values[1]
+
+        return (rho_value * B - A) * z
+    end;
+    variable_names = [:activity1, :activity2],
+    variable_lower_bounds = [0.0, 0.0],
+    variable_upper_bounds = [Inf, Inf],
+    variable_start = [1, 1],
+    observed_variables = [
+        GEM.AuxiliaryVariableRef(:rho),
+    ],
+    name = :firm,
+)
+
+# ----------------------------------------------------------------
+# 4. Activity-scale normalization
+#
+# The activity vector is homogeneous in the von Neumann model, so use
+#
+#     z1 + z2 = 1
+#
+# as the scale normalization. The equation is paired with rho.
+# ----------------------------------------------------------------
+
+activity_normalization = GEM.AuxiliaryEquation(
+    :activity_normalization,
+    :rho,
+    values -&gt; values[1] + values[2] - 1.0;
+    observed_variables = [
+        GEM.AgentVariableRef(:firm, :activity1),
+        GEM.AgentVariableRef(:firm, :activity2),
+    ],
+)
+
+# ----------------------------------------------------------------
+# 5. Equilibrium model
+#
+# Commodity 2 is the numeraire:
+#
+#     p2 = 1
+# ----------------------------------------------------------------
+
+model = GEM.NetSupplyEquilibriumModel(
+    [firm],
+    [:commodity1, :commodity2];
+    auxiliary_variables = [rho],
+    auxiliary_equations = [activity_normalization],
+    numeraire_index = 2,
+    numeraire_value = 1.0,
+    price_lower_bounds = [0.0, 0.0],
+    price_upper_bounds = [Inf, Inf],
+)
+
+# ----------------------------------------------------------------
+# 6. Solve
+# ----------------------------------------------------------------
+
+result = GEM.solve_equilibrium_model_mcp_jump(
+    model;
+    p0 = [0.9, 1.0],
+    auxiliary0 = [1.1],
+    residual_tol = 1.0e-8,
+    silent = true,
+)
+
+# ----------------------------------------------------------------
+# 7. Extract solution
+# ----------------------------------------------------------------
+
+p = result.prices
+z = result.agent_variable_values[1]
+rho_star = result.auxiliary_values[:rho]
+
+# ----------------------------------------------------------------
+# 8. Direct verification of the von Neumann conditions
+# ----------------------------------------------------------------
+
+unit_losses = A&#39; * p - rho_star * (B&#39; * p)
+market_surplus = (rho_star * B - A) * z
+
+println()
+println(&quot;========== Von Neumann equilibrium ==========&quot;)
+println(&quot;Solved: &quot;, result.solved)
+println(&quot;rho: &quot;, rho_star)
+println(&quot;Prices: &quot;, p)
+println(&quot;Activities: &quot;, z)
+println(&quot;Unit losses: &quot;, unit_losses)
+println(&quot;Market surplus: &quot;, market_surplus)
+println(
+    &quot;Activity normalization residual: &quot;,
+    result.auxiliary_equation_values[:activity_normalization],
+)
+println(&quot;Total GEM net supply: &quot;, result.total_net_supply)
+println(&quot;Max natural residual: &quot;, result.max_natural_residual)
+println(&quot;Max market residual: &quot;, result.max_market_residual)
+println(&quot;=============================================&quot;)
+
+# ----------------------------------------------------------------
+# 9. Analytic-solution checks
+# ----------------------------------------------------------------
+
+@assert result.solved
+
+@assert isapprox(
+    rho_star,
+    1.2;
+    atol = 1.0e-7,
+    rtol = 1.0e-7,
+)
+
+@assert isapprox(
+    p,
+    [1.0, 1.0];
+    atol = 1.0e-7,
+    rtol = 1.0e-7,
+)
+
+@assert isapprox(
+    z,
+    [0.5, 0.5];
+    atol = 1.0e-7,
+    rtol = 1.0e-7,
+)
+
+@assert maximum(abs, unit_losses) &lt;= 1.0e-7
+@assert maximum(abs, market_surplus) &lt;= 1.0e-7
+</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../gem_pollution_negativePrice_nc3_na2/">« gem<em>pollution</em>negativePrice<em>nc3</em>na2</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Saturday 29 August 2026 00:05">Saturday 29 August 2026</span>. Using Julia version 1.10.12.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
